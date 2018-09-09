@@ -23,7 +23,7 @@ namespace InfrustructureMVC.Controllers
 
         IEnumerable<Infrustructure> GetAllInfrustructure()
         {
-            using (DBModel db = new DBModel())
+            using (InfraDbEntities db = new InfraDbEntities())
             {
                 return db.Infrustructures.ToList<Infrustructure>();
             }
@@ -35,7 +35,7 @@ namespace InfrustructureMVC.Controllers
             Infrustructure emp = new Infrustructure();
             if (id != 0)
             {
-                using (DBModel db = new DBModel())
+                using (InfraDbEntities db = new InfraDbEntities())
                 {
                     emp = db.Infrustructures.Where(x => x.IId == id).FirstOrDefault<Infrustructure>();
                 }
@@ -49,7 +49,7 @@ namespace InfrustructureMVC.Controllers
             try
             {
                 
-                using (DBModel db = new DBModel())
+                using (InfraDbEntities db = new InfraDbEntities())
                 {
                     if (inf.IId == 0)
                     {
@@ -76,7 +76,7 @@ namespace InfrustructureMVC.Controllers
         {
             try
             {
-                using (DBModel db = new DBModel())
+                using (InfraDbEntities db = new InfraDbEntities())
                 {
                     Infrustructure inf = db.Infrustructures.Where(x => x.IId == id).FirstOrDefault<Infrustructure>();
                     db.Infrustructures.Remove(inf);

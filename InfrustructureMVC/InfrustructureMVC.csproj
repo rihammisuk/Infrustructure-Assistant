@@ -199,6 +199,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ClassroomController.cs" />
+    <Compile Include="Controllers\ComplainController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InfrustructureController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -331,6 +332,10 @@
     <Content Include="Views\Classroom\Index.cshtml" />
     <Content Include="Views\Classroom\AddOrEdit.cshtml" />
     <Content Include="Views\Classroom\ViewAll.cshtml" />
+    <Content Include="Views\Complain\Index.cshtml" />
+    <Content Include="Views\Complain\AddOrEdit.cshtml" />
+    <Content Include="Views\Complain\ViewAll.cshtml" />
+    <Content Include="Views\Complain\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

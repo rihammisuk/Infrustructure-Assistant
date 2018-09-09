@@ -74,7 +74,7 @@
           <Property Name="Description" Type="varchar" MaxLength="100" />
           <Property Name="StudentId" Type="varchar" MaxLength="20" />
           <Property Name="RoomId" Type="int" />
-          <Property Name="ConplainDate" Type="varchar" MaxLength="50" />
+          <Property Name="ComplainDate" Type="varchar" MaxLength="50" />
           <Property Name="ComplainStatus" Type="bit" />
         </EntityType>
         <EntityType Name="Infrustructure">
@@ -271,7 +271,7 @@
           <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="StudentId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="RoomId" Type="Int32" />
-          <Property Name="ConplainDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ComplainDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ComplainStatus" Type="Boolean" />
           <NavigationProperty Name="Classroom" Relationship="Self.FK_Complain_Classroom" FromRole="Complain" ToRole="Classroom" />
           <NavigationProperty Name="Infrustructure" Relationship="Self.FK_Complain_Infrustructure" FromRole="Complain" ToRole="Infrustructure" />
@@ -340,7 +340,7 @@
           <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="*" />
           <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="DBModel" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="InfraDbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRole" />
           <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaim" />
           <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogin" />
@@ -374,7 +374,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="InfraDbModelStoreContainer" CdmEntityContainer="DBModel">
+        <EntityContainerMapping StorageEntityContainer="InfraDbModelStoreContainer" CdmEntityContainer="InfraDbEntities">
           <EntitySetMapping Name="AspNetRoles">
             <EntityTypeMapping TypeName="InfraDbModel.AspNetRole">
               <MappingFragment StoreEntitySet="AspNetRoles">
@@ -438,7 +438,7 @@
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="StudentId" ColumnName="StudentId" />
                 <ScalarProperty Name="RoomId" ColumnName="RoomId" />
-                <ScalarProperty Name="ConplainDate" ColumnName="ConplainDate" />
+                <ScalarProperty Name="ComplainDate" ColumnName="ComplainDate" />
                 <ScalarProperty Name="ComplainStatus" ColumnName="ComplainStatus" />
               </MappingFragment>
             </EntityTypeMapping>

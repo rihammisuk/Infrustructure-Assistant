@@ -23,7 +23,7 @@ namespace InfrustructureMVC.Controllers
 
         IEnumerable<Classroom> GetAllClassroom()
         {
-            using (DBModel db = new DBModel())
+            using (InfraDbEntities db = new InfraDbEntities())
             {
                 return db.Classrooms.ToList<Classroom>();
             }
@@ -35,7 +35,7 @@ namespace InfrustructureMVC.Controllers
             Classroom emp = new Classroom();
             if (id != 0)
             {
-                using (DBModel db = new DBModel())
+                using (InfraDbEntities db = new InfraDbEntities())
                 {
                     emp = db.Classrooms.Where(x => x.CId == id).FirstOrDefault<Classroom>();
                 }
@@ -49,7 +49,7 @@ namespace InfrustructureMVC.Controllers
             try
             {
                 
-                using (DBModel db = new DBModel())
+                using (InfraDbEntities db = new InfraDbEntities())
                 {
                     if (croom.CId == 0)
                     {
@@ -76,7 +76,7 @@ namespace InfrustructureMVC.Controllers
         {
             try
             {
-                using (DBModel db = new DBModel())
+                using (InfraDbEntities db = new InfraDbEntities())
                 {
                     Classroom emp = db.Classrooms.Where(x => x.CId == id).FirstOrDefault<Classroom>();
                     db.Classrooms.Remove(emp);
